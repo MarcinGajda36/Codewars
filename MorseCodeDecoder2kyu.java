@@ -1,6 +1,11 @@
-/// assertThat(MorseCodeDecoder.decodeMorse(MorseCodeDecoder.decodeBits("1100110011001100000011000000111111001100111111001111110000000000000011001111110011111100111111000000110011001111110000001111110011001100000011")),
-// is("HEY JUDE"));
-
+/*
+public class SolutionTest {
+    @Test
+    public void testSomething() {
+        assertEquals(MorseCodeDecoder.decodeMorse(MorseCodeDecoder.decodeBitsAdvanced("0000000011011010011100000110000001111110100111110011111100000000000111011111111011111011111000000101100011111100000111110011101100000100000")), "HEY JUDE");
+    }
+}
+*/
 public class MorseCodeDecoder {
 	public static String SOS = "...---...";
 
@@ -46,8 +51,8 @@ public class MorseCodeDecoder {
 	 * Accepts 0s and 1s, return dots, dashes and spaces
 	 *
 	 */
-	public static String decodeBits(String bits) {
-		//System.out.println(bits);
+	public static String decodeBitsAdvanced(String bits) {
+		System.out.println(bits);
 		resetTranslator(); // Needs to reset or it will just keep growing every
 							// test
 
@@ -73,7 +78,7 @@ public class MorseCodeDecoder {
 		adjustTranslator(transmitionRate);
 
 		// System.out.println("transmitionRate: " +transmitionRate);
-		//System.out.println("translated : " + globalCustomRateTranslate(bits));
+		System.out.println("translated : " + globalCustomRateTranslate(bits));
 		// globalCustomRateTranslate(bits);
 		return globalCustomRateTranslate(bits);
 	}
@@ -168,7 +173,7 @@ public class MorseCodeDecoder {
 		pauseChars[0] = "";
 		pauseWords[0] = "";
 	}
-	/*
+
 	private static String singleCharTranslator(String toTransform) {
 		switch (toTransform) {
 		case (pauseBits[0]):
@@ -185,5 +190,5 @@ public class MorseCodeDecoder {
 			return ".";
 		}
 	}
-	*/
+
 }
